@@ -38,4 +38,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 =======
 # portfolio-web
 This is my portfolio, which showcases my professional career over the years using innovative technologies such as Next.js, Tailwind, and TypeScript.
->>>>>>> 278dd98dec6ae9336f673f8ab373a5fd7111986d
+## Animations
+- Framer Motion </br>
+  Instalation: `npm install framer-motion`
+- typeit-react </br>
+  Instalation: `npm install typeit-react`
