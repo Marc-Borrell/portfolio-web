@@ -21,7 +21,7 @@ export default function Projects() {
           >
             <h3 className="text-xl font-semibold">{project.title}</h3>
             <p className="text-neutral-400 mt-3">{project.desc}</p>
-            <figure className="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <figure className="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 flex justify-center items-center h-screen">
             <a href={project.link} target="_blank" rel="noopener noreferrer">
             <img className="rounded-base" src={project.img} />
             </a>

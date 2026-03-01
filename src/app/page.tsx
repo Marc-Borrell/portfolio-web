@@ -5,9 +5,9 @@ import Projects from "./components/Projects";
 export default function Home() {
   return (
     <main>
-      <Introduction />
-      <About />
-      <Projects />
+      <section id="home"><Introduction /></section>
+      <section id="about"><About /></section>
+      <section id="projects"><Projects /></section>
     </main>
   );
 }
