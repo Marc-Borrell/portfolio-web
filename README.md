@@ -43,3 +43,7 @@ This is my portfolio, which showcases my professional career over the years usin
   Instalation: `npm install framer-motion`
 - typeit-react </br>
   Instalation: `npm install typeit-react`
+
+## Animated images 
+ - lottie </br>
+  Instalation: `npm install @lottiefiles/dotlottie-react`

@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import TypeIt from "typeit-react";
 import Image from 'next/image';
 import miDibujo from '../../../public/Loader cat.gif';
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Introduction() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center px-6">
+    <section className="h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 gap-12 max-w-6xl mx-auto">
+      <div className="flex flex-col items-center md:items-start flex-1">
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -42,22 +44,66 @@ export default function Introduction() {
       />;
       </motion.p>
       
-      <Image
-        src={miDibujo}
-        alt="Dibujo animado corriendo"
-        width={150} // Define un tamaño
-        height={150}
-        unoptimized // IMPORTANTE: Los GIFs suelen requerir esto para animarse
-      />
-
-      <motion.a
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        href="#projects"
-        className="mt-8 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 font-semibold shadow-lg hover:shadow-cyan-500/30 transition"
+      <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mt-8 flex gap-4 flex-wrap justify-center md:justify-start"
+        >
+          <a
+            href="#about"
+            className="px-6 py-3 rounded-full bg-white text-neutral-900 font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
+          >
+            Know more about me
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-full border border-white/30 text-white font-semibold hover:border-cyan-400 hover:text-cyan-400 hover:scale-105 transition-all duration-200"
+          >
+            Contact with me
+          </a>
+        </motion.div>
+      </div>
+      
+       {/* Imagen lado derecho con animación flotante */}
+      <motion.div
+        className="flex-1 flex justify-center items-center relative"
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, delay: 0.3 }}
       >
-        Projects
-      </motion.a>
+        {/* Glow de fondo */}
+        <div className="absolute w-72 h-72 rounded-full bg-cyan-500/20 blur-3xl" />
+
+        {/* Lottie animation — flota suavemente */}
+        <motion.div
+          animate={{ y: [0, -14, 0] }}
+          //transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="relative z-10 w-80 h-80"
+        >
+          <DotLottieReact
+            src="https://lottie.host/9f957502-1c01-43b0-bc71-762461410819/uB2iKM3lgo.lottie"
+            loop
+            autoplay
+          />
+        </motion.div>
+
+        <motion.div
+          className="absolute top-4 right-4 bg-white/10 backdrop-blur border border-white/20 rounded-xl px-3 py-2 text-sm text-cyan-300 font-mono shadow"
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+          {"<Developer />"}
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-8 left-4 bg-white/10 backdrop-blur border border-white/20 rounded-xl px-3 py-2 text-sm text-purple-300 font-semibold shadow"
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        >
+          Open to work
+        </motion.div>
+      </motion.div>
       
     </section>
   );
