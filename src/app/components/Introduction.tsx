@@ -8,7 +8,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Introduction() {
   return (
-    <section className="h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 gap-12 max-w-6xl mx-auto">
+    <section className="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 gap-12 max-w-6xl mx-auto">
       <div className="flex flex-col items-center md:items-start flex-1">
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
@@ -72,10 +72,9 @@ export default function Introduction() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, delay: 0.3 }}
       >
-        {/* Glow de fondo */}
+        {/* Background glow */}
         <div className="absolute w-72 h-72 rounded-full bg-cyan-500/20 blur-3xl" />
 
-        {/* Lottie animation — flota suavemente */}
         <motion.div
           animate={{ y: [0, -14, 0] }}
           //transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

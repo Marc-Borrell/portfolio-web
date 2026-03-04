@@ -9,7 +9,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-34 px-6 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-12">Projects</h2>
 
       <div className="overflow-x-auto flex space-x-6 pb-4 py-4 projects-scroll">
