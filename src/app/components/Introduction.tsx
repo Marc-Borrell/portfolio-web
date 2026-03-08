@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import TypeIt from "typeit-react";
-import Image from 'next/image';
-import miDibujo from '../../../public/Loader cat.gif';
+/*import Image from 'next/image';
+import miDibujo from '../../../public/Loader cat.gif';*/
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Introduction() {
@@ -65,7 +65,6 @@ export default function Introduction() {
         </motion.div>
       </div>
       
-       {/* Imagen lado derecho con animación flotante */}
       <motion.div
         className="flex-1 flex justify-center items-center relative"
         initial={{ opacity: 0, x: 60 }}
