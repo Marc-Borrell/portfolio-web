@@ -5,6 +5,7 @@ import TypeIt from "typeit-react";
 /*import Image from 'next/image';
 import miDibujo from '../../../public/Loader cat.gif';*/
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import ResumeButton from "./Resumebutton";
 
 export default function Introduction() {
   return (
@@ -51,17 +52,12 @@ export default function Introduction() {
           className="mt-8 flex gap-4 flex-wrap justify-center md:justify-start"
         >
           <a
-            href="#about"
-            className="px-6 py-3 rounded-full bg-white text-neutral-900 font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
-          >
-            Know more about me
-          </a>
-          <a
             href="#contact"
             className="px-6 py-3 rounded-full border border-white/30 text-white font-semibold hover:border-cyan-400 hover:text-cyan-400 hover:scale-105 transition-all duration-200"
           >
             Contact with me
           </a>
+          <ResumeButton />
         </motion.div>
       </div>
       

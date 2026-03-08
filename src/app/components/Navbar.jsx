@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect  } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
 
   // showing navbar when up scrolling
   useEffect(() => {
@@ -35,6 +37,8 @@ export default function Navbar() {
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
+
+  if (pathname === "/resume") return null;
 
   return (
     <div>
