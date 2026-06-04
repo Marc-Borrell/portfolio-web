@@ -2,9 +2,10 @@
 import { motion } from "framer-motion";
 
 const projects = [
-  { title: "SaaS Dashboard", desc: "Panel admin con auth y analytics.", img: "https://i.pinimg.com/236x/14/06/50/140650eae0f0311d165f94e168404891.jpg", link: "https://github.com/Marc-Borrell" },
-  { title: "E-commerce", desc: "Tienda online optimizada para SEO.", img: "https://i.pinimg.com/236x/14/06/50/140650eae0f0311d165f94e168404891.jpg", link: "https://github.com/Marc-Borrell" },
-  { title: "Django app", desc: "App backend con Django REST.", img: "https://i.pinimg.com/236x/14/06/50/140650eae0f0311d165f94e168404891.jpg", link: "https://github.com/Marc-Borrell" },
+  { title: "M.O.N. Protocol", desc: "M.O.N Protocol is a web application made in Angular that integrates a Unity game inside it.", img: "/monLogo.png", link: "https://github.com/Marc-Borrell/web-game", tags: ["Angular", "Unity", "Node.js", "PostgreSQL"],},
+  { title: "Air Quality Monitoring System", desc: "The application is made with Spring Boot and allows users to consult the air quality of a city by consuming data from an API.", img: "airQualityLogo.png", link: "https://github.com/Marc-Borrell/spring-pj7",tags: ["Spring Boot", "Java", "Thymeleaf","MongoDB"], }, 
+  { title: "Rock-paper-scissors", desc: "Desktop Rock-Paper-Scissors game made with QT where the player competes against an AI opponent.", img: "/RPSLogo.png", link: "https://github.com/Marc-Borrell/rock-paper-scissors", tags: ["C++", "QT", "MQTT", "CMake"], },
+  { title: "Space Expedition Manager", desc: "The application is made with C# and allows users to register and log in to manage a system for space expeditions.", img: "/expSpacial.png", link: "https://github.com/Marc-Borrell/expedicio-espacial",tags: ["C#", ".NET", "ADO.NET"], },
 ];
 
 export default function Projects() {
@@ -18,17 +19,31 @@ export default function Projects() {
             key={i}
             whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="min-w-[350px] max-w-[400px] p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-400 transition-colors cursor-pointer"
+            className="min-w-[350px] max-w-[400px] p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-400 transition-colors cursor-pointer flex flex-col min-h-[420px]"
           >
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1">
             <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-neutral-400 mt-3">{project.desc}</p>
-            <br />
+            <p className="text-neutral-400 mt-3 line-clamp-4">{project.desc}</p>
 
-            <figure className="relative w-full h-50 overflow-hidden rounded-xl">
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
+            {project.tags && project.tags.length > 0 && (
+  <div className="flex flex-wrap gap-1.5 mt-auto pt-4">
+    {project.tags.map((tag) => (
+      <span
+        key={tag}
+        className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-cyan-400/10 text-cyan-300 border border-cyan-400/20"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+)}
+
+            <figure className="relative mt-auto overflow-hidden rounded-xl" style={{ height: "192px" }}>
                 <img className="object-cover w-full h-full hover:scale-105 transition-transform duration-300" src={project.img} alt={project.title} />
-              </a>
+
+                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/70 to-transparent rounded-t-xl pointer-events-none" />
             </figure>
+            </a>
           </motion.div>
         ))}
       </div>
