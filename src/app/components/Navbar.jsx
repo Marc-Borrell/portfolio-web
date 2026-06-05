@@ -41,6 +41,13 @@ export default function Navbar() {
   ];
 
   if (pathname === "/resume") return null;
+  
+  const handleNavClick = (e, href) => {
+  e.preventDefault();
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
 
   return (
     <div>
@@ -123,9 +130,9 @@ export default function Navbar() {
                   key={index}
                   className="flex items-center p-1 text-lg gap-x-2 text-neutral-400 hover:text-cyan-400 transition-colors"
                 >
-                  <Link onClick={() => { setIsMobileMenuOpen(false); }} href={item.href} className="flex items-center">
+                  <a href={item.href} onClick={(e) => { handleNavClick(e, item.href); setIsMobileMenuOpen(false); }} className="flex items-center">
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -139,9 +146,9 @@ export default function Navbar() {
                   key={index}
                   className="flex items-center p-1 text-lg gap-x-2 text-neutral-400 hover:text-cyan-400 transition-colors"
                 >
-                  <Link href={item.href} className="flex items-center">
+                  <a href={item.href} onClick={(e) => handleNavClick(e, item.href)} className="flex items-center">
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
