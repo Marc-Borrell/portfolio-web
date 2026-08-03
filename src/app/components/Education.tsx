@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const education = [
-  /* {
+   {
     degree: "Applied Computer Science — Artificial Intelligence Major",
     school: "Thomas More  · Geel, Belgium",
     period: "2026 – Actuallity",
@@ -11,7 +11,7 @@ const education = [
       "Bachelor's degree program in Applied Computer Science with specialization in Artificial Intelligence. Focused on advanced software development, data engineering, machine learning, enterprise applications, and modern software architectures.",
     tags: ["Java",".NET","Software Engineering","Machine Learning","Data Science","Data Engineering","Business Intelligence","Cloud & DevOps","Web Development", "Application Security","Software Architecture", "Enterprise Systems"],
     dotColor: "cyan" as const,
-  }, */
+  }, 
   {
     degree: "Web Application Development", 
     school: "Escola Jesuïtes el Clot · Barcelona, Spain",
